@@ -1,0 +1,66 @@
+spicy-infobox {
+  flex: 0 1 290px;
+  margin: 0 4px;
+}
+
+.card {
+  margin: 16px 16px 16px 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.17);
+}
+
+.header, .basic, .extended, .footer {
+  width: inherit;
+  box-sizing: border-box;
+}
+
+.header {
+  padding: 10px;
+  color: rgba(0, 0, 0, 0.4);
+  font-weight: 700;
+  font-size: 18px;
+  height: 46px;
+  line-height: 26px;
+}
+
+.card-inner {
+  padding: 20px;
+  color: #333;
+  line-height: 1.3;
+  min-height: 300px;
+}
+
+.basic {
+  min-height: 76px;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  font-style: italic;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #ccc;
+}
+
+.basic .image {
+  margin-left: 8px;
+  height: 50px;
+  flex-basis: 50px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+}
+
+.image img {
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+}
+
+.extended {
+  padding-top: 12px;
+}
+
+.footer {
+  height: 20px;
+}

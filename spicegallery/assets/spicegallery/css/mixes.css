@@ -1,0 +1,70 @@
+.spicy-mixes {
+  margin: auto;
+  width: 80vw;
+}
+
+.mixes-main {
+  width: inherit;
+  position: relative;
+  display: flex;
+}
+
+.mix-boxes {
+  flex-basis: 80vw;
+  display: flex;
+  margin: 0 4px;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 0 1 290px;
+  margin: 16px 20px 16px 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.17);
+}
+
+.header, .footer {
+  width: inherit;
+  box-sizing: border-box;
+}
+
+.header {
+  padding: 10px;
+  color: rgba(0, 0, 0, 0.4);
+  font-weight: 700;
+  font-size: 18px;
+  height: 46px;
+  line-height: 26px;
+}
+
+.spice-in-mix {
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+  font-size: 18px;
+  height: 26px;
+  line-height: 26px;
+}
+
+.footer {
+  height: 20px;
+}
+
+.back-btn {
+  cursor: pointer;
+  margin-top: 30px;
+  height: 36px;
+  width: 106px;
+  border: 2px solid #333;
+  border-radius: 8px;
+  color: white;
+  background-color: #333;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.back-btn:hover {
+  background-color: #555;
+  border: 2px solid #555;
+}

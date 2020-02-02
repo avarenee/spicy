@@ -1,0 +1,82 @@
+html {
+  overflow-y: scroll;
+}
+
+body {
+  background-color: #F6F6F6;
+  font-family: Cantarell;
+  margin: 0;
+  padding-bottom: 128px;
+}
+
+header {
+  box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.1);
+  padding: 6px 4vw 4px 4vw;
+}
+
+.spicy-main {
+  margin: auto;
+  width: 80vw;
+}
+
+h1 {
+  color: #333;
+  font-size: 42px;
+  margin: 64px 0 28px 0;
+}
+
+input[type=submit] {
+  cursor: pointer;
+  margin-top: 30px;
+  height: 36px;
+  width: 106px;
+  border: 2px solid #333;
+  border-radius: 8px;
+  color: white;
+  background-color: #333;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+input[type=submit]:hover {
+  background-color: #555;
+  border: 2px solid #555;
+}
+
+form {
+  position: relative;
+  box-shadow: 0 2px 6px 4px rgba(0, 0, 0, 0.075);
+  background-color: white;
+  padding: 30px 45px 45px 45px;
+}
+
+.checkbox-container {
+  -webkit-column-width: 10em;
+  -moz-column-width: 10em;
+  column-width: 10em;
+}
+
+.spiceinfo span {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 1050px) {
+   h1 {
+      font-size: 36px;
+   }
+}
+
+@media only screen and (max-width: 900px) {
+   h1 {
+      font-size: 30px;
+   }
+}
+
+
+@media only screen and (max-width: 750px) {
+   h1 {
+      font-size: 24px; 
+   }
+}

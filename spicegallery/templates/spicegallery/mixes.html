@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+  <link rel="shortcut icon" type="image/png" href="{% static 'spicegallery/favicon.ico' %}"/>
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Cantarell"/>
+  <link rel="stylesheet" href="{% static 'spicegallery/css/index.css' %}"/>
+  <link rel="stylesheet" href="{% static 'spicegallery/css/mixes.css' %}"/>
+  <script>
+  </script>
+</head>
+<body>
+  <header>
+    <a href="{% url 'spicegallery:index' %}"><img src="{% static 'spicegallery/images/spicy_text_logo.png' %}" height="40"></a>
+  </header>
+  <div class="spicy-mixes">
+    {% if mixes_list %}
+      <h1>Here are some mixes you can make!</h1>
+      <div class="mixes-main">
+        <div class="mix-boxes">
+          {% for mix in mixes_list %}
+          <div class="card">
+            <div class="header" style="background-color: {{ mix.color }};">{{ mix.name|upper }}</div>
+            <div class="card-inner">
+              {% for spice in mix.spices.all %}
+                <div class="spice-in-mix">{{ spice.name }}</div>
+              {% endfor %}
+            </div>
+            <div class="footer"></div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+    {% if not mixes_list %}
+      <h1>Sorry, you don't have the spices to create any of the mixes in our database!</h1>
+    {% endif %}
+    <a href="{% url 'spicegallery:index' %}"><button class="back-btn">Go back</button></a>
+  </div>
+</body>
+</html>

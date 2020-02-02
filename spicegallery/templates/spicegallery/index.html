@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+  <link rel="shortcut icon" type="image/png" href="{% static 'spicegallery/favicon.ico' %}"/>
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Cantarell"/>
+  <link rel="stylesheet" href="{% static 'spicegallery/css/index.css' %}"/>
+  <link rel="stylesheet" href="{% static 'spicegallery/css/spicy-checkbox.css' %}"/>
+  <link rel="stylesheet" href="{% static 'spicegallery/css/spicy-infobox.css' %}"/>
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+  <script>
+    $(function(){
+      var selected_spices = [];
+      $('.checkbox input[type=checkbox]').click((spice) => {
+        selected_spices.push(spice.target.value);
+        if (!spice.target.checked) {
+          selected_spices = selected_spices.filter((s) => {return s != spice.target.value});
+        }
+        var boxes = '';
+        {% for spice in spice_list %}
+          if (jQuery.inArray("{{ spice.name }}", selected_spices) !== -1) {
+            const spice_name = "{{ spice.name }}";
+            boxes += `<spicy-infobox
+                        spice_name="{{ spice.name }}"
+                        color="{{ spice.color }}"
+                        basic="{{ spice.basic_description }}"
+                        extended="{{ spice.extended_description }}"
+                      >
+                      </spicy-infobox>`;
+          }
+        {% endfor %}
+        $('.spiceinfo span').html( boxes );
+      });
+    });
+  </script>
+  <script type="module" src="{% static 'spicegallery/js/spicy-checkbox.js' %}"></script>
+  <script type="module" src="{% static 'spicegallery/js/spicy-infobox.js' %}"></script>
+</head>
+<body>
+  <header>
+    <a href="{% url 'spicegallery:index' %}"><img src="{% static 'spicegallery/images/spicy_text_logo.png' %}" height="40"></a>
+  </header>
+  <div class="spicy-main">
+    <div class="checkbox">
+      <h1>Select which spices you have in your cabinet:</h1>
+      <form method="post" enctype="multipart/form-data" action="{% url 'spicegallery:mixes' %}">
+        {% csrf_token %}
+        <div class="checkbox-container">
+          {% for spice in spice_list %}
+            <spicy-checkbox spice_id="{{ spice.id }}" spice_name="{{ spice.name }}"></spicy-checkbox><br>
+          {% endfor %}
+        </div>
+        <input type="submit" value="Next">
+      </form>
+    </div>
+    <div class="spiceinfo">
+      <h1>View more information about these spices:</h1>
+      <span>
+      </span>
+    </div>
+  </div>
+</body>
+</html>
