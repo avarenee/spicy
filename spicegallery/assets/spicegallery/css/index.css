@@ -43,6 +43,10 @@ input[type=submit]:hover {
   border: 2px solid #555;
 }
 
+input[type=submit]:focus {
+  box-shadow: 0 0 2px 2px #da6814;
+}
+
 form {
   position: relative;
   box-shadow: 0 2px 6px 4px rgba(0, 0, 0, 0.075);
@@ -77,6 +81,6 @@ form {
 
 @media only screen and (max-width: 750px) {
    h1 {
-      font-size: 24px; 
+      font-size: 24px;
    }
 }

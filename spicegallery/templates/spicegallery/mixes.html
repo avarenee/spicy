@@ -23,7 +23,14 @@
             <div class="header" style="background-color: {{ mix.color }};">{{ mix.name|upper }}</div>
             <div class="card-inner">
               {% for spice in mix.spices.all %}
-                <div class="spice-in-mix">{{ spice.name }}</div>
+                {% if spice.name in spice_list %}
+                  <div class="spice-in-mix selected">{{ spice.name }}</div>
+                {% endif %}
+              {% endfor %}
+              {% for spice in mix.spices.all %}
+                {% if spice.name not in spice_list %}
+                  <div class="spice-in-mix">{{ spice.name }}</div>
+                {% endif %}
               {% endfor %}
             </div>
             <div class="footer"></div>

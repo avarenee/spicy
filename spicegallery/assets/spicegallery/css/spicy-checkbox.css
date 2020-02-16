@@ -42,6 +42,10 @@ svg {
   z-index: 0;
 }
 
+input:focus ~ .customcheck {
+  box-shadow: 0 0 2px 2px #da6814;
+}
+
 input:checked ~ .customcheck {
   border-color: #da6814;
   background-color: #da6814;

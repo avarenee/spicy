@@ -40,11 +40,16 @@
 }
 
 .spice-in-mix {
+  background-color: #eee;
   border-bottom: 1px solid #ccc;
   padding: 10px;
   font-size: 18px;
   height: 26px;
   line-height: 26px;
+}
+
+.spice-in-mix.selected {
+  background-color: white;
 }
 
 .footer {
