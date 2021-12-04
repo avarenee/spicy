@@ -76,11 +76,11 @@ WSGI_APPLICATION = 'spicy.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'spicy',
-        'USER': 'abiery',
+        'NAME': 'spicydb',
+        'USER': 'satellitesahara',
         'PASSWORD': 'spicypass',
         'HOST': 'localhost',
-        'PORT': '',
+        'PORT': '8002',
     }
 }
 
